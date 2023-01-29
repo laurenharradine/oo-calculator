@@ -77,6 +77,8 @@ function getButton (){
         console.log("Clearing...")
         calc.input = "0"
         calc.lastClickWasEquals = false
+        calc.isFirstClick = true
+        
     }
     else if (this.classList.contains("equals")){
         console.log("Time to evaluate...")
@@ -86,6 +88,7 @@ function getButton (){
     else if (!this.classList.contains("number")){
         calc.input += calc.checkOperand(this)
         calc.lastClickWasEquals = false
+        calc.isFirstClick = false
     }
     else {
         if (calc.lastClickWasEquals || calc.isFirstClick){
@@ -94,9 +97,10 @@ function getButton (){
         }
         else calc.input += this.innerHTML
         calc.lastClickWasEquals = false
+        calc.isFirstClick = false
     }
     console.log (`Input: ${calc.input}`)
     let screen = document.querySelector(".calc-screen")
     screen.innerHTML = calc.input
-    calc.isFirstClick = false
+    
 }
