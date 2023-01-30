@@ -27,7 +27,7 @@ body {
 .calc {
     /* border: 2px solid red; */
     width: 400px;
-    height: 520px;
+    height: 600px;
 }
 
 .calc-screen {
@@ -50,6 +50,7 @@ body {
     margin-top: 0;
     display:grid;
     grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto); /*added this line */
     justify-content: center;
     gap: 4px;
     margin-top: 20px;
@@ -63,6 +64,12 @@ body {
     text-align: center;
     height: 97px;
     width: 97px;
+}
+
+.span-fifth-row {
+    grid-column: 1 / 5;
+    grid-row: 5 / 6; 
+    width: 100%;
 }
 
 .button:hover, .clear {
